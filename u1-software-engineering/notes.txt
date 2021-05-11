@@ -1,1 +1,6 @@
 Notes for the first Unit - Software Engineering
+
+
+Chapter 1: Course Overview
+    Primary goal is to learn to appreciate and use the fundamental design principles of modularity and abstraction.
+    
