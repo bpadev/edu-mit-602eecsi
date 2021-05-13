@@ -1,0 +1,83 @@
+Chapter 1: Course Overview
+
+
+1.1 Goals for 6.01 
+    Primary goal is to learn to appreciate and use the fundamental design principles of modularity and abstraction.
+    Second goal is to show that making mathematical models of real systems can help in the design and analysis of those systems.
+
+1.2 Modularity, abstraction, and modeling
+    Humans deal with complexity by exploting the power of abstraction and modularity. 
+    Modularity is the idea of building components that can be re-used;
+    Abstraction is the idea that after constructing a module, most of the details of the module construction can be ignored and a simpler description used for module interaction.
+
+1.2.1 Example problem
+
+1.2.2 An abstraction hierarchy of mechansisms
+    One important thing engineers do is standardize on a basis set of components to use to build their systems.
+    Very complicated design problems can become tractable using such a primitive-combination-abstraction-pattern (PCAP) approach.
+    Circuits
+        Typical electronics circuits are built out of a basis set of primitive components such as voltage sources, resistors, capacitors, inductors and transistors.
+        Lack of modularity makes it very difficult to design large systems, because two different people, or the same person at two different times, cannot design pieces and put them together without understanding the whole.
+    Digital circuits
+        Voltages on the terminals are thought of as only taking on values that are either "low" or "high" (often called 0 and 1).
+        Digital watches, calculators, and computers are all built this way.
+    Computers
+        Computers are a particular class of digital circuits that are general purpose. 
+        It is much cheaper and easier to debug and modify and manufacture software than hardware.
+        We don't need to know how the circuits inside a computer are designed, we just need to know the rules by which we can use them and the constraints under which they perform.
+    Python programs
+        Computer programming languages are PCAP systems.
+        At the most basic level, computers generally store binary digits (bits) in groups of 32 or 64 bits, called words.
+
+1.2.3 Models 
+    A new system that is considerably simpler than the system being modeled, but which captures the important aspects of the original system.
+    One of the hardest things about building models is deciding which aspects of the original system to model and which ones to ignore.
+    Analytical models
+        By far the most prevalent use of models is in analysis: Given a computer program, will it compute the desired answer? How long will it take?
+    Synthetic models
+        You might describe some properties you would want the input/output behavior of a circuit or computer program to have, and then have a computer systems discover a circuit or program with the desired property.
+        The intuition and previous experience of an expert human designer cannot yet be matched by computational search methods.
+        Humans use informal models of systems for synthesis, such as the documentation of a software library.
+    Internal models
+        As we build more and more complex systems with software programs as controllers, we find that it is often useful to build additional layers of abstraction on top of the one provided by a generic programming language.
+        Ex. representing a map as a graph for a taxi robot, then implementing an algorithm to find the shortest-path.
+
+1.3 Programming embedded systems
+
+1.3.1 Interacting with the environment
+    Organizing computations that interact with an external world:
+        1. get information from sensors (light sensors, sonars, mouse, keyboard, etc.)
+        2. perform computation, remembering some of the results, and
+        3. take actions to change the outside world (move the robot, print, draw, etc.)
+
+1.3.1.1 Sequential
+    Most straightforward style for constructing a program that interacts with the world is the basic imperative style, in which the program gives a sequence of 'commands' to the system it is controlling.
+    
+1.3.1.2 Event-Driven
+    User-interface programs are often best organized differently, as event-driven (interrupt driven) programs.
+    The program is specified as a collection of procedures (called handlers or callbacks) that are attached to particular events that can take place.
+
+1.3.1.3 Transducer
+    An alternative view is that programming a system that interacts with an external world is like building a transducer with internal state.
+    Think of a transducer as a processing box that runs continiously. 
+
+1.3.2 Programming models   
+    Just as there are different strategies for organizing entire software systems, there are different strategies for formally expressing computational processes within those structures.
+
+1.3.2.1 Imperative computation 
+    Giving a sequential set of instructions to the computer to do something.
+
+1.3.2.2 Functional computation 
+    Rather than telling the computer to do things, we ask it questions: What is 4 + 5? What is the largest element of the list?
+    This method would not be powerful without the mechanisms of conditional evaluation and recursion.
+    We combine elements using function composition (using the output of one function as the input to another).
+
+1.3.2.3 Data structures
+    At the most primitive level, computers operate on collections of (usually 32 or 64) bits.
+    To operate on more complex data like douments or maps or circuits or social networks, we need to aggregate primitive data elements into more complex data structures.
+    We can write programs that do operations on a data structure representing a social network, for example, without having to worry about the details of how the social network is represented in terms of bits in the machine.
+
+1.3.2.4 Object-oriented programming: computation + data structures 
+    An object is a data structure, together with a set of procedures that operate on the data.
+    Programming languages
+        The programmer needs to choose which programming model best suites the task.
