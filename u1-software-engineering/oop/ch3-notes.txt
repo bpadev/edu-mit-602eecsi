@@ -27,3 +27,13 @@ Each expression has a value, which can be computed recursively by evaluating pri
 3.2.2 Variables
 A variable is a name that we can bind to have a particular value and then later use in an expression.
 An interpreter keeps track of which variables are bound to what values in binding environments.
+
+3.3 Structured data
+We want to organize the data into natural structures: grocery lists, matrices, sets of employee medical records.
+
+3.3.1 List mutation and shared structure
+Lists are mutable data structures, which means that we can actually change the values stored in their elements.
+Programs that change list structure can become very confusing, but you can always work your way through what is happening by drawing out the memory diagrams.
+Aliasing is when you have two variables pointing to the same piece of data. (ex. a = [3, 4, 5], b = a)
+
+3.3.2 Tuples and strings
