@@ -1,1 +1,29 @@
 Chapter 3: Programs and Data
+
+The enormous richness and complexity of computer programs comes from the composition of primitive elements with simple rules.
+An interpreter is made up of four pieces:
+    The reader to tokenizer takes as input a string of characters and divides them into tokens, which are numbers (like -3.42), words like (while or a), and special characters (like :).
+    The parser takes as input the string of tokens and understands them as constructs in the programming language, such as while loops, procedure definitions, or return statements.
+    The evaluator (which is also sometimes called the interpreter) has the really interesting job of determining the value and effects of the program that you ask it to interpret.
+    The printer takes the value returned by the evaluator and prints it out for the user to see.
+
+
+3.1 Primitives, Composition, Abstraction, and Patterns
+Data
+    The primitive data items in most programming languages are things like integers, floating point numbers, and strings.
+Procedures
+    The primitive procedures of a language are things like built-in numeric operations and basic list operations.
+Objects
+    Object-oriented programming provide a number of methods of abstraction and pattern capture in both data and procedures.
+    The features of inheritance and polymorphism are particularly important.
+
+3.2 Expressions and assignment
+We can think of most computer programs as performing some sort of transformation on data.
+High-level programming languages such as Python let us abstract away lower level details.
+
+3.2.1 Simple Expressions
+Each expression has a value, which can be computed recursively by evaluating primitive expressions, and then using standard rules to combine their values to get new values.
+
+3.2.2 Variables
+A variable is a name that we can bind to have a particular value and then later use in an expression.
+An interpreter keeps track of which variables are bound to what values in binding environments.
