@@ -37,3 +37,26 @@ Programs that change list structure can become very confusing, but you can alway
 Aliasing is when you have two variables pointing to the same piece of data. (ex. a = [3, 4, 5], b = a)
 
 3.3.2 Tuples and strings
+A tuple is a structure that is like a list, but is not mutable.
+    a = (1, 2, 3)
+    a = 'abc' strings are tuples
+Structured assignment (destructuring)
+    a, b, c = 1, 2, 3
+
+3.4 Procedures
+Procedures are computer-program constructs that let us capture common patterns of computation by:
+    Gathering together sequences of statements
+    Abstracting away from particular data items on which they operate.
+
+3.4.1 Defintion
+
+3.4.2 Procedure calls
+
+3.4.3 Non-local references
+
+3.4.4 Environments in Python
+__builtin__: the mother of all environments, it contains the definitions of all sorts of basic symbols.
+Module: each separate file that contains Python code is called a module and establishes its own environment, whose parent is __builtin__
+Procedure calls: if defined in the top level of a module (not nested in the definition of another procedure) it has the module's environment as its parent. Procedures defined inside other procedures have the procedure-call environment of the containing procedure as their parent.
+
+3.4.5 Non-local references in procedures
