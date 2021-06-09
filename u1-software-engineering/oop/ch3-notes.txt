@@ -60,3 +60,13 @@ Module: each separate file that contains Python code is called a module and esta
 Procedure calls: if defined in the top level of a module (not nested in the definition of another procedure) it has the module's environment as its parent. Procedures defined inside other procedures have the procedure-call environment of the containing procedure as their parent.
 
 3.4.5 Non-local references in procedures
+Use global to reference a variable outside of the current environment. 
+
+3.4.6 Procedures as first-class objects 
+In Python procedures are treated in much the same way as numbers:
+    They can be stored as variables.
+    Can be passed as arguments to procedures.
+    Can be returned as results of procedure calls. 
+We can construct some procedures without naming them using lambda:
+    f = lambda x: x*x
+We can pass in procedures as arguments.
